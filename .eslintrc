@@ -1,0 +1,20 @@
+{
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "Uint8Array": true
+  },
+  "parser": "babel-eslint",
+  "extends": "defaults",
+  "rules": {
+    "no-console": 0,
+    "no-constant-condition": 0,
+    "quotes": [2, "single"],
+    "strict": [2, "never"]
+  }
+}

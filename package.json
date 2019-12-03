@@ -1,0 +1,23 @@
+{
+  "name": "pushy-electron",
+  "description": "The official Pushy SDK for Electron apps.",
+  "author": "Pushy <support@pushy.me>",
+  "license": "Apache-2.0",
+  "main": "lib/Pushy.js",
+  "//": "Also update version in config.js",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "electron electron.js"
+  },
+  "dependencies": {
+    "electron-store": "^5.1.0",
+    "mqtt": "^3.0.0"
+  },
+  "devDependencies": {
+    "electron": "^7.1.2"
+  },
+  "bugs": {
+    "url": "https://github.com/pushy-me/pushy-electron/issues"
+  },
+  "homepage": "https://github.com/pushy-me/pushy-electron#readme"
+}

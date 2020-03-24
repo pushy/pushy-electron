@@ -1,4 +1,4 @@
-const { app, BrowserWindow, dialog } = require('electron');
+const { app, BrowserWindow } = require('electron');
 
 // Replace '../lib/Pushy' with 'pushy-electron' if using this code in your own project
 const Pushy = require('./lib/Pushy');
@@ -17,17 +17,17 @@ function createWindow() {
 
         // Register device for push notifications
         Pushy.register({ appId: '550ee57c5b5d72117f51e801' }).then(function (deviceToken) {
-            // Display an alert with the Pushy device token
-            dialog.showMessageBox(win, { message: 'Pushy device token: ' + deviceToken });
+            // Display an alert with device token
+            Pushy.alert(win, 'Pushy device token: ' + deviceToken);
         }).catch(function (err) {
             // Display error dialog
-            dialog.showMessageBox(win, { message: 'Pushy Error: ' + err.message });
+            Pushy.alert(win, 'Pushy registration error: ' + err.message);
         });
 
         // Listen for incoming notifications
         Pushy.setNotificationListener((data) => {
             // Display an alert with the "message" payload value
-            dialog.showMessageBox(win, { message: 'Received notification: ' + data.message });
+            Pushy.alert(win, 'Received notification: ' + data.message);
         });
     });
 

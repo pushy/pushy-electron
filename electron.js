@@ -16,10 +16,10 @@ function createWindow() {
         Pushy.listen();
 
         // Register device for push notifications
-        Pushy.register({ appId: '550ee57c5b5d72117f51e801' }).then(function (deviceToken) {
+        Pushy.register({ appId: '550ee57c5b5d72117f51e801' }).then((deviceToken) => {
             // Display an alert with device token
             Pushy.alert(win, 'Pushy device token: ' + deviceToken);
-        }).catch(function (err) {
+        }).catch((err) => {
             // Display error dialog
             Pushy.alert(win, 'Pushy registration error: ' + err.message);
         });

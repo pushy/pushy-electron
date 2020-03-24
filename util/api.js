@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 const config = require('../config');
 const localStorage = new (require('electron-store'))();
 

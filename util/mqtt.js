@@ -64,7 +64,7 @@ module.exports = {
         }
 
         // Invoke notification listener (in renderer process)
-        this.Pushy.ipcRenderer.send('_pushyNotification', payload);
+        this.Pushy.onNotification(payload);
     },
 
     getMqttHost() {

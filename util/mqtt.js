@@ -1,5 +1,5 @@
-const mqtt = require('mqtt');
 const config = require('../config');
+const mqtt = require('mqtt/lib/connect');
 const localStorage = new (require('electron-store'))();
 
 module.exports = {
@@ -19,7 +19,7 @@ module.exports = {
         this.Pushy = Pushy;
 
         // Create long-lived MQTT client
-        const client = mqtt.connect(this.getMqttHost(), this.getMqttOptions());
+        const client = mqtt(this.getMqttHost(), this.getMqttOptions());
 
         // Listen for events
         client.on('error', this.onError.bind(this));

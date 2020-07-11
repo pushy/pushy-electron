@@ -98,8 +98,11 @@ module.exports = {
         // Attempt to fetch existing token and auth
         let token = localStorage.get(config.storageKeys.token);
         let tokenAuth = localStorage.get(config.storageKeys.tokenAuth);
+        
+        // Fetch keepalive interval (seconds) or default to 300
+        let keepAlive = localStorage.get(config.storageKeys.keepAliveInt) || config.mqtt.defaultKeepAlive;
 
         // MQTT connection options
-        return { keepalive: 300, username: token, password: tokenAuth, clientId: token };
+        return { keepalive: keepAlive, username: token, password: tokenAuth, clientId: token };
     }
 }

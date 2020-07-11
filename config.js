@@ -10,13 +10,15 @@ module.exports = {
     },
     // MQTT endpoint
     mqtt: {
-        endpoint: 'mqtts://mqtt-{timestamp}.pushy.io:443'
+        endpoint: 'mqtts://mqtt-{timestamp}.pushy.io:443',
+        defaultKeepAlive: 300
     },
     // Local storage preference keys
     storageKeys: {
         token: 'pushyToken',
         tokenAuth: 'pushyTokenAuth',
         tokenAppId: 'pushyTokenAppId',
+        keepAliveInt: 'pushyKeepAliveInt',
         enterpriseEndpoint: 'pushyEnterpriseEndpoint',
         enterpriseMqttEndpoint: 'pushyEnterpriseMqttEndpoint'
     }

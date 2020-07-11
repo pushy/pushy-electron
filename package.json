@@ -5,7 +5,7 @@
   "license": "Apache-2.0",
   "main": "lib/Pushy.js",
   "//": "Also update version in config.js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "scripts": {
     "dev": "electron electron.js"
   },

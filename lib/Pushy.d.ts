@@ -28,7 +28,7 @@ declare namespace Pushy {
 
     function disconnect(): void
 
-    function alert(win: BrowserWindow, msg: string)
+    function alert(win: BrowserWindow, msg: string): void
 }
 
 export = Pushy

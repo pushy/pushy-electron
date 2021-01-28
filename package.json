@@ -16,7 +16,7 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "electron": "^7.1.2"
+    "electron": "^9.4.0"
   },
   "bugs": {
     "url": "https://github.com/pushy-me/pushy-electron/issues"

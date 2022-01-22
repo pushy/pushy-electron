@@ -13,7 +13,7 @@
   "dependencies": {
     "electron-store": "^5.1.0",
     "mqtt": "^3.0.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^3.1.1"
   },
   "devDependencies": {
     "electron": "^11.5.0"

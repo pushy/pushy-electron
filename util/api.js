@@ -1,5 +1,5 @@
 const config = require('../config');
-const fetch = require('node-fetch').default; // Workaround for #2: https://github.com/pushy-me/pushy-electron/issues/2
+const fetch = require('node-fetch').default; // Workaround for #2: https://github.com/pushy/pushy-electron/issues/2
 const localStorage = new (require('electron-store'))();
 
 module.exports = {

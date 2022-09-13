@@ -1,6 +1,6 @@
 const config = require('../config');
+const localStorage = require('./storage');
 const mqtt = require('mqtt/lib/connect');
-const localStorage = new (require('electron-store'))();
 
 module.exports = {
     connect(Pushy) {

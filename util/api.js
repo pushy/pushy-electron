@@ -1,6 +1,6 @@
 const config = require('../config');
+const localStorage = require('./storage');
 const fetch = require('node-fetch').default; // Workaround for #2: https://github.com/pushy/pushy-electron/issues/2
-const localStorage = new (require('electron-store'))();
 
 module.exports = {
     async get(path, options) {

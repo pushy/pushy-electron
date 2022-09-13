@@ -6,7 +6,7 @@
   "main": "lib/Pushy.js",
   "typings": "lib/Pushy.d.ts",
   "//": "Also update version in config.js",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "scripts": {
     "dev": "electron electron.js"
   },

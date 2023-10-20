@@ -1,6 +1,6 @@
 module.exports = {
     // Pushy Electron SDK version code
-    version: 1000,
+    version: 1012,
     // SDK platform code
     platform: 'electron',
     // API production and development endpoints

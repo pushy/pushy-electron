@@ -29,6 +29,18 @@ function createWindow() {
             // Display an alert with the "message" payload value
             Pushy.alert(win, 'Received notification: ' + data.message);
         });
+
+        // Listen for connectivity events
+        Pushy.setConnectivityListener((connected, error) => {
+            // Log error message if present
+            if (error) {
+                console.log('Connection error: ' + error);
+            }
+            else {
+                // Log connected boolean status
+                console.log('Connected: ' + connected);
+            }
+        });
     });
 
     // Load the index.html of the app

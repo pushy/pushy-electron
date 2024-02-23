@@ -34,16 +34,25 @@ module.exports = {
     onError(err) {
         // Log to ipcMain console
         console.log('[Pushy] MQTT Error\n', err);
+
+        // Invoke connectivity listener (in renderer process)
+        this.Pushy.onConnectivityChanged(this.client.connected, err);
     },
 
     onClose() {
         // Log to ipcMain console
         console.log(`[Pushy] Disconnected from server`);
+
+        // Invoke connectivity listener (in renderer process)
+        this.Pushy.onConnectivityChanged(this.client.connected);
     },
 
     onConnect() {
         // Log to ipcMain console
         console.log(`[Pushy] Connected successfully (device token ${localStorage.get(config.storageKeys.token)})`);
+
+        // Invoke connectivity listener (in renderer process)
+        this.Pushy.onConnectivityChanged(this.client.connected);
     },
 
     onMessage(topic, message) {

@@ -6,9 +6,13 @@ declare namespace Pushy {
 
     type Listener<T> = (data: T) => void
 
+    type ConnectivityListener<T> = (connected: boolean, error: T) => void
+
     function listen(): void
 
     function setNotificationListener<T>(l: Listener<T>): void
+    
+    function setConnectivityListener<T>(l: ConnectivityListener<T>): void
 
     function register(opts: { appId: string }): Promise<DeviceToken>
 

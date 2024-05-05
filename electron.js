@@ -12,11 +12,11 @@ function createWindow() {
 
     // On window load listener
     win.webContents.on('did-finish-load', () => {
-        // Listen for notifications
-        Pushy.listen();
-
         // Register device for push notifications
         Pushy.register({ appId: '550ee57c5b5d72117f51e801' }).then((deviceToken) => {
+            // Listen for notifications and connectivity
+            Pushy.listen();
+
             // Display an alert with device token
             Pushy.alert(win, 'Pushy device token: ' + deviceToken);
         }).catch((err) => {

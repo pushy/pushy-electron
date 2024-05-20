@@ -12,6 +12,9 @@ module.exports = {
     },
     set(key, value) {
         return getLocalStorage().set(key, value);
+    },
+    delete(key) {
+        return getLocalStorage().delete(key);
     }
 };
 

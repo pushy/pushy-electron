@@ -112,6 +112,19 @@ module.exports = {
         let keepAlive = localStorage.get(config.storageKeys.keepAliveInt) || config.mqtt.defaultKeepAlive;
 
         // MQTT connection options
-        return { keepalive: keepAlive, username: token, password: tokenAuth, clientId: token };
+        let options = { keepalive: keepAlive, username: token, password: tokenAuth, clientId: token };
+
+        // mTLS support
+        let mTLS = this.Pushy.mTLSConfig;
+        
+        // mTLS support
+        if (mTLS) {
+            options.ca = mTLS.ca;
+            options.key = mTLS.key;
+            options.cert = mTLS.cert;
+        }
+
+        // Return options
+        return options;
     }
 }

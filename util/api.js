@@ -1,16 +1,18 @@
+const https = require('https');
 const config = require('../config');
 const localStorage = require('./storage');
 const fetch = require('node-fetch').default; // Workaround for #2: https://github.com/pushy/pushy-electron/issues/2
 
 module.exports = {
-    async get(path, options) {
-        // Nothing special to do here, simply send the request
-        return await this.execute(path, options || {});
-    },
-
-    async post(path, json, options) {
+    async post(path, json, mTLS) {
         // Default request options
-        options = options || {};
+        let options = {};
+
+        // mTLS configured?
+        if (mTLS) {
+            // Prepare HTTPS agent with config
+            options.agent = https.Agent(mTLS);
+        }
 
         // Set POST request options
         options.method = 'POST';

@@ -30,6 +30,8 @@ declare namespace Pushy {
 
     function setEnterpriseConfig(endpoint: string, mqttEndpoint: string): void
 
+    function mTLS(config: object): void
+
     function disconnect(): void
 
     function alert(win: BrowserWindow, msg: string): void

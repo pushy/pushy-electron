@@ -28,6 +28,8 @@ declare namespace Pushy {
 
     function isEnterpriseConfigured(): boolean
 
+    function setDeviceCredentials(token: string, auth: string): void
+
     function setEnterpriseConfig(endpoint: string, mqttEndpoint: string): void
 
     function mTLS(config: object): void

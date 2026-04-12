@@ -17,7 +17,7 @@
     "packpath": "^0.1.0"
   },
   "devDependencies": {
-    "electron": "^39.8.4"
+    "electron": "^41.2.0"
   },
   "bugs": {
     "url": "https://github.com/pushy/pushy-electron/issues"
